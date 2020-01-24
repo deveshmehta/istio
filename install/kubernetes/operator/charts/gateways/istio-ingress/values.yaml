@@ -77,6 +77,7 @@ gateways:
     externalIPs: []
     serviceAnnotations: {
       service.beta.kubernetes.io/aws-load-balancer-internal: "true",
+      service.beta.kubernetes.io/aws-load-balancer-additional-resource-tags: "Environment=dev,Owner=charlie.feher@dwp.gsi.gov.uk,Scheme=Internal,Product=EKS Cluster,Product Family=CMG Shared Resources,Name=dev-eks-cluster-internal-elb,Terraform=false",
       service.beta.kubernetes.io/aws-load-balancer-ssl-cert: "arn:aws:acm:eu-west-2:798861612849:certificate/59c0efcb-4e34-4cc5-bfa4-ab3d71bf043f"
     }
 
@@ -277,7 +278,8 @@ gateways:
     loadBalancerSourceRanges: [194.73.212.3/32]
     externalIPs: []
     serviceAnnotations: {
-      service.beta.kubernetes.io/aws-load-balancer-ssl-cert: "arn:aws:acm:eu-west-2:798861612849:certificate/59c0efcb-4e34-4cc5-bfa4-ab3d71bf043f"
+      service.beta.kubernetes.io/aws-load-balancer-ssl-cert: "arn:aws:acm:eu-west-2:798861612849:certificate/59c0efcb-4e34-4cc5-bfa4-ab3d71bf043f",
+      service.beta.kubernetes.io/aws-load-balancer-additional-resource-tags: "Environment=dev,Owner=charlie.feher@dwp.gsi.gov.uk,Scheme=External,Product=EKS Cluster,Product Family=CMG Shared Resources,Name=dev-eks-cluster-internal-elb,Terraform=false",
     }
 
     domain: ""
